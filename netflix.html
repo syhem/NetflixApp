@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css" />
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>iNoteSeries</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content fullscreen>
+      <ion-card style="background-color:rgb(255, 196, 196)">
+        <img src="./series.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle>IFOFLIX</ion-card-subtitle>
+          <ion-card-title>Noter vos séries</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>Quelles sont les meilleures séries de tous les temps,
+          toutes nationalités et tous genres confondus ?
+        </ion-card-content>
+      </ion-card>
+      <ion-item>
+        <ion-label position="floating">Nom série</ion-label>
+        <ion-input type="text" id="input_1"></ion-input>
+      </ion-item>
+      <ion-item>
+
+        <!-- VERSION SANS DROPDOWN LIST -->
+        <!-- <ion-label position="floating">Notes (1-10)</ion-label>
+          <ion-input type="number" id="input_2"></ion-input> -->
+
+        <!-- VERSION AVEC DROPDOWN LIST -->
+        <ion-label>Score</ion-label>
+        <ion-select id="select_number" interface="action-sheet">
+          <!-- Popover : autoselection -->
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5" selected>5</ion-select-option>
+          <!--selected : default -->
+        </ion-select>
+
+      </ion-item>
+
+      <ion-list id="list_1"></ion-list>
+
+    </ion-content>
+    <ion-button size="large" margin id="btn-add">
+      Commencer à noter
+    </ion-button>
+    <ion-alert-controller></ion-alert-controller>
+  </ion-app>
+  <script src="netflix.js"></script>
+</body>
+
+</html>
